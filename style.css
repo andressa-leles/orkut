@@ -416,6 +416,13 @@ header.menu-bg {
   }
 
   /*HEADER*/
+  header {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+
   .menu-nav a {
     display: none;
   }
@@ -429,35 +436,45 @@ header.menu-bg {
       margin-left:10px;
   }
 
+  .arrow {
+    width: 20px;
+    margin-right:10px;
+  }
+
+  .profile-name{
+    margin-right: 5px;
+    font-size: 14px;
+  }
+
   .profile-card,
   .edit-button-wrapper{
     width: 100%;
+    margin: 0 auto;
   }
 
   .profile-info{
-    margin-top: 60px;
-   width: 100%;
-    max-width:350px;
+    margin: 60px auto 0;
+    width: 100%;
+    
   }
 
   .container-sidebar{
     width: 100%;
-    max-width:350px;
-    margin-left: 50px;
+    margin: 0 auto;
   }
 
   .sidebar-comunidade{
     width: 100%;
-    max-width:350px;
+    margin: 0 auto;
 
   }
 
  .container-friends {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 15px;
-  padding: 0 20px ; /* Isso cria espaçamento igual à esquerda e direita */
-  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  padding: 0 20px ; 
+  box-sizing: border-box; 
 }
 
 .link-amigos p,
