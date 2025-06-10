@@ -20,50 +20,20 @@ a{
 
 
 .container {
-    width: 1024px;
-    min-height: 100vh;
   display: grid;
-  grid-template-columns: 200px 1fr 250px; /* Esquerda, centro, direita */
+  grid-template-columns: 200px 1fr 250px;
+  grid-template-areas:
+    "header header header"
+    "profile main sidebar"
+    "edit main sidebar";
   gap: 20px;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-
-
-    grid-template-areas:
-        "header header header"
-        "profile main sidebar"
-        "edit main sidebar";
-    gap: 20px;
-   padding: 20px 0;
+  min-height: 100vh;
 }
 
-@media(max-width: 400px) {
-  .container {
-    display: grid;
-    width: 360px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "profile"
-      "edit"
-      "amigos"
-      "main"
-      "sidebar"; /* ou remova um se necessário */
-  }
-
-  header .menu-logo img {
-    grid-area: header;
-    width: 80px;
-  }
-
-  .profile {
-    grid-area: profile;
-  }
-
- 
-
-}
 
 .menu-bg{
     grid-area: header;
@@ -76,7 +46,6 @@ header{
     align-items: center;
     justify-content: center;
     width: 100%;
-    //max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -104,11 +73,6 @@ header.menu-bg {
   gap: 30px;
 }
 
-@media(max-width:970px){
-  .menu-nav ul{
-    display: none;
-  }
-}
 
 .menu-nav a{
     font-size: 15px;
@@ -147,11 +111,6 @@ header.menu-bg {
   
 }
 
-@media(max-width:970px){
-.menu-search input{
-    display: none;
-  }
-}
 
 .menu-profile {
   display: flex;
@@ -176,13 +135,15 @@ header.menu-bg {
   padding: 20px;
   width: 200px;
   height: 250px;
-  margin-right: 100px;
 }
 
-  .profile-card {
+ .profile-card {
     grid-area: profile;
-    width: 350px;
-
+      width: 237px;
+      height: 250px;
+      align-items: center;
+      margin-right: 100px;
+     
   }
 
 
@@ -220,6 +181,13 @@ header.menu-bg {
 
 /*BOTÃO*/
 
+.edit-button-wrapper {
+  grid-area: edit;
+  display: flex;
+  justify-content: center;
+}
+
+
 .edit-button {
   background-color: #f8f8f8;
  
@@ -235,6 +203,7 @@ header.menu-bg {
   margin-top: 70px;
 }
 
+
 /*MAIN*/
 
 .profile-info {
@@ -242,20 +211,13 @@ header.menu-bg {
  background-color: #ffffff;
   padding: 24px;
   border-radius: 10px;
-  width: 100%;  
+  width: 650px;
+  margin-left: 40px;
    min-height: 740px; 
    fon-size: 14px;
    color: #4b4b4b;
    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
-
-.profile-info {
-    grid-area: main;
-    margin-top:60px;
-    width: 360px;
-  }
-
-
 
 .boas-vindas{
   color: #4b4b4b;
@@ -380,13 +342,6 @@ header.menu-bg {
   height: 350px;
   border-radius: 10px;
 }
-
- .container-sidebar, .sidebar-comunidade  {
-    grid-area: sidebar;
-    width: 360px;
-  }
-
-  
 
 
 .link-amigos, .link-comunidade{
