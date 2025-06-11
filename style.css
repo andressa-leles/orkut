@@ -405,8 +405,12 @@ header.menu-bg {
 
 /* RESPONSIVO*/
 
-@media (max-width: 450px){
+@media (max-width: 768px){
   .container{
+    width: 100%;
+    max-width: 450px;
+    margin:0 auto;
+    padding: 60px 5px 0 5px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "profile"
@@ -416,39 +420,71 @@ header.menu-bg {
   }
 
   /*HEADER*/
-  header {
-  width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
+
+
+.menu-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+ 
+  .menu-logo img {
+    height: 24px;
+    max-width: 100px;
+    object-fit: contain;
+  }
+
+  .menu-logo {
+  flex-shrink: 0;
+}
+
+  .menu-profile {
+    display: flex;
+   align-items: center;
+    gap: 6px;
+  }
+
+  .foto-nav {
+     width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  }
+
+  .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 
-  .menu-nav a {
-    display: none;
-  }
-
-  .menu-search input{
-    display: none;
-  }
-
-  .menu-logo img{
-      width: 70px;
-      margin-left:10px;
+  .profile-name {
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .arrow {
-    width: 20px;
-    margin-right:10px;
+    width: 12px;
+    height: 10px;
   }
 
-  .profile-name{
-    margin-right: 5px;
-    font-size: 14px;
+  /* Remover scroll horizontal no body */
+  body {
+    overflow-x: hidden;
   }
-
+  
+.menu-nav,
+.menu-search {
+  display: none;
+}
+  /*SIDEBAR*/
+  
   .profile-card,
   .edit-button-wrapper{
-    width: 100%;
+    width:95%;
     margin: 0 auto;
   }
 
@@ -484,4 +520,8 @@ header.menu-bg {
   font-size: 15px;
 }
 
+}
+
+@media (max-width: 768px) {
+ 
 }
